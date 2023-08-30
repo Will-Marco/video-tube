@@ -2,7 +2,7 @@
 const App = () => {
     return (
         <div>
-            Hello APP
+            Hello
         </div>
     );
 };
