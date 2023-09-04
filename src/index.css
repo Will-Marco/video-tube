@@ -27,7 +27,7 @@
   margin: 10px 0;
   padding: 7px 15px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   background: transparent;
   font-weight: bold !important;
