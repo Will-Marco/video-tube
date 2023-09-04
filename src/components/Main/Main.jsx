@@ -19,8 +19,8 @@ const Main = () => {
       } catch (error) {
         console.error(error);
       }
-      getData();
     };
+    getData();
     // ApiService.fetching("search").then((data) => setVideos(data));
   }, []);
 
