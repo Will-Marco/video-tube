@@ -33,7 +33,7 @@ function ChannelCard({ video }) {
             mb: 2,
             border: "1px solid #e3e3e3",
           }}
-        >
+        />
           <Typography variant="h6">
             {video?.snippet?.title}{" "}
             <CheckCircle sx={{ fontSize: "14px", color: "gray", ml: "5px" }} />
@@ -46,7 +46,6 @@ function ChannelCard({ video }) {
               subscribers
             </Typography>
           )}
-        </CardMedia>
       </CardContent>
     </Box>
   );
