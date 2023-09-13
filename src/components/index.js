@@ -7,5 +7,6 @@ export { default as Search } from "./Search/Search";
 export { default as SearchBar } from "./Search-bar/Search-bar";
 export { default as Category } from "./Category/Category";
 export { default as Videos } from "./Videos/Videos";
-export { default as VideoCard} from "./Video-card/Video-card";
+export { default as VideoCard } from "./Video-card/Video-card";
 export { default as ChannelCard } from "./Channel-card/Channel-card";
+export { default as Loader } from "./Loader/Loader";
