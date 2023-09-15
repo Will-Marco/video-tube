@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Avatar, Box, Chip, Stack, Typography } from "@mui/material";
 import {
@@ -39,7 +39,7 @@ const VideoDetail = () => {
 
   if (!videoDetail?.snippet) return <Loader />;
   const {
-    snippet: { title, channelTitle, description, tags, thumbnails },
+    snippet: { title, channelId, channelTitle, description, tags, thumbnails },
     statistics: { viewCount, likeCount, commentCount },
   } = videoDetail;
 
@@ -65,20 +65,23 @@ const VideoDetail = () => {
           <Typography variant="h5" p={2} fontWeight={"bold"}>
             {title}
           </Typography>
-
-          <Stack
-            direction={"row"}
-            marginTop={"5px"}
-            alignItems={"center"}
-            gap={"5px"}
-          >
-            <Avatar src={thumbnails.default.url} alt={channelTitle} />
-            <Typography variant="subtitle2" color={"gray"}>
-              {channelTitle}
-              <CheckCircle
-                sx={{ ml: "5px", fontSize: "12px", color: "gray" }}
-              />
-            </Typography>
+          <Stack direction={"row"} py={1} px={2}>
+            <Link to={`/channel/${channelId}`}>
+              <Stack
+                direction={"row"}
+                marginTop={"5px"}
+                alignItems={"center"}
+                gap={"5px"}
+              >
+                <Avatar src={thumbnails.default.url} alt={channelTitle} />
+                <Typography variant="subtitle2" color={"gray"}>
+                  {channelTitle}
+                  <CheckCircle
+                    sx={{ ml: "5px", fontSize: "12px", color: "gray" }}
+                  />
+                </Typography>
+              </Stack>
+            </Link>
           </Stack>
           <Typography variant="subtitle2" p={2} sx={{ opacity: ".7" }}>
             <Interweave content={description} />

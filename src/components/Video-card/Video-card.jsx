@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   CardMedia,
   Card,
@@ -9,7 +10,6 @@ import {
 import { colors } from "../../constants/constants";
 import moment from "moment";
 import { CheckCircle } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 const VideoCard = ({ video }) => {
   return (
@@ -48,7 +48,7 @@ const VideoCard = ({ video }) => {
             {video?.snippet?.description.slice(0, 70)}
           </Typography>
         </Link>
-        <>
+        <Link to={`/channel/${video.snippet.channelId}`}>
           <Stack
             direction={"row"}
             position={"absolute"}
@@ -64,7 +64,7 @@ const VideoCard = ({ video }) => {
               />
             </Typography>
           </Stack>
-        </>
+        </Link>
       </CardContent>
     </Card>
   );
